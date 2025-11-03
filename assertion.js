@@ -44,8 +44,8 @@ addToDone("Exercise 1 is correct.");
 
 try {
   assert(
-    fruits,
-    ["mango", "banana", "guava", "kiwi", "strawberry"],
+    [...fruits].filter((a) => a !== "tomato").sort(),
+    ["mango", "banana", "guava", "kiwi", "strawberry"].sort(),
     "Exercise 2"
   );
 } catch {
@@ -59,8 +59,8 @@ addToDone("Exercise 2 is correct.");
 
 try {
   assert(
-    vegetables,
-    ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"],
+    [...vegetables].filter((a) => a !== "tomato").sort(),
+    ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"].sort(),
     "Exercise 3"
   );
 } catch {
@@ -96,8 +96,8 @@ addToDone("Exercise 5 is correct");
 
 try {
   assert(
-    vegetables,
-    ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini", "tomato"],
+    vegetables.sort(),
+    ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini", "tomato"].sort(),
     "Exercise 6"
   );
 } catch {

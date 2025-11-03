@@ -38,6 +38,7 @@
 
 // Exercise 7
 // Given the array of numbers defined below, reverse the array of numbers that you created above.
+const someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // Exercise 8
 // Sort the vegetables in alphabetical order. Recommend finding a way to sort the array with a built-in method
