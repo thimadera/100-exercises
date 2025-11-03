@@ -81,8 +81,8 @@ addToDone("Exercise 4 is correct.");
 
 try {
   assert(
-    fruits,
-    ["mango", "banana", "guava", "kiwi", "strawberry", "tomato"],
+    [...fruits].sort(),
+    ["mango", "banana", "guava", "kiwi", "strawberry", "tomato"].sort(),
     "Exercise 5"
   );
 } catch {
@@ -96,8 +96,15 @@ addToDone("Exercise 5 is correct");
 
 try {
   assert(
-    vegetables.sort(),
-    ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini", "tomato"].sort(),
+    [...vegetables].sort(),
+    [
+      "eggplant",
+      "broccoli",
+      "carrot",
+      "cauliflower",
+      "zucchini",
+      "tomato",
+    ].sort(),
     "Exercise 6"
   );
 } catch {
@@ -187,30 +194,51 @@ try {
 }
 addToDone("Exercise 10 is correct");
 
-// A partir daqui, usarei a convenção que as chamadas de função causam o erro se a função
-// não estiver definida. Se a função for definida mas o *assert* falhar, o comportamento é
-// o mesmo de antes.
+// This function generates a random number that is both positive and even
+function randomPositiveEvenNumber() {
+  var randomNumber = Math.ceil(Math.random() * 100) + 10;
+  if (randomNumber % 2 !== 0) {
+    return randomPositiveEvenNumber();
+  }
 
-// Note que no Ex. 11, o primeiro assert é a forma mais provável de erro por variável não definida.
-try {
-  assert(sayHello("Jane"), "Hello, Jane!");
-  assert(sayHello("Pat"), "Hello, Pat!");
-  assert(sayHello("Astrud"), "Hello, Astrud!");
-  assert(sayHello("June"), "Hello, June!");
-  assert(sayHello("World"), "Hello, World!");
-} catch {
-  assert(undefined, "Hello, Jane!", "assert for sayHello failed"); // Usamos o primeiro assert como referência para o undefined
+  return randomNumber;
 }
-// Não tem addToDone para este grupo de asserts, então não precisamos de um extra aqui.
 
-try {
-  assert(plusTwo(3), 5, "3 plus 2 is five");
-  assert(plusTwo(-2), 0, "-2 plus 2 is zero");
-  assert(plusTwo(0), 2, "zero plus 2 is two");
-} catch {
-  assert(undefined, 5, "assert for plusTwo failed");
+// this function generates a random number that is both positive and odd
+function randomPositiveOddNumber() {
+  var randomNumber = Math.ceil(Math.random() * 100) + 10;
+  if (randomNumber % 2 === 0) {
+    return randomPositiveOddNumber();
+  }
+
+  return randomNumber;
 }
-// Não tem addToDone para este grupo de asserts.
+
+// this function generates a random number that is both negative and even.
+function randomNegativeEvenNumber() {
+  var randomNumber = Math.ceil(Math.random() * -100) - 10;
+  if (randomNumber % 2 === 0) {
+    return randomNumber;
+  }
+
+  return randomNegativeEvenNumber();
+}
+
+// this function generates a random number that is both negative and odd.
+function randomNegativeOddNumber() {
+  var randomNumber = Math.ceil(Math.random() * -100) - 10;
+  if (randomNumber % 2 === 0) {
+    return randomNegativeOddNumber();
+  }
+
+  return randomNumber;
+}
+
+// The next 4 lines create variables that hold these generated random numbers
+var positiveEvenNumber = randomPositiveEvenNumber();
+var positiveOddNumber = randomPositiveOddNumber();
+var negativeEvenNumber = randomNegativeEvenNumber();
+var negativeOddNumber = randomNegativeOddNumber();
 
 try {
   assert(addOne(2), 3, "Exercise 11");

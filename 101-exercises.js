@@ -51,7 +51,6 @@ const someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Assign the result to a variable named fruitsAndVeggies.
 // *hint* the search engine search here would be "how to combine two arrays in JavaScript", for example.
 
-
 // Writing functions
 // See https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions for help with writing functions
 // Be sure to return values from your function definitions. The assert statements will call/run your function(s) for you.
